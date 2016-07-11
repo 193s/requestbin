@@ -84,7 +84,7 @@ class Request(object):
             self.path = input.path
             self.content_type = self.headers.get("Content-Type", "")
 
-            self.raw = input.environ.get('raw')
+            self.raw = unicode(input.environ.get('raw'), 'UTF-8')
             self.content_length = len(self.raw)
 
             # for header in self.ignore_headers:
